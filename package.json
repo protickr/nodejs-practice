@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/protickr/nodejs-practice/issues"
   },
-  "homepage": "https://github.com/protickr/nodejs-practice#readme"
+  "homepage": "https://github.com/protickr/nodejs-practice#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
