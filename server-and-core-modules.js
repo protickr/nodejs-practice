@@ -4,10 +4,18 @@
 // all modules provide us with some methods and properties
 
 // path module
-const path = require("path");
-const myPath = 'C:/Users/No/Desktop/projects/nodejs-practice/index.js';
-const baseName = path.basename(myPath);
-const directoryName = path.dirname(myPath);
-const extName = path.extname(myPath);
-const parseRes = path.parse(myPath);
-console.log(baseName, directoryName, extName, parseRes);
+// const path = require("path");
+// const myPath = 'C:/Users/No/Desktop/projects/nodejs-practice/index.js';
+// const baseName = path.basename(myPath);
+// const directoryName = path.dirname(myPath);
+// const extName = path.extname(myPath);
+// const parseRes = path.parse(myPath);
+// console.log(baseName, directoryName, extName, parseRes);
+
+// os module
+const os = require("os");
+osPlatform = os.platform();
+osHomedir = os.homedir();
+osFreemem = os.freemem();
+cpuCoreCount = os.cpus();
+console.log(osPlatform, osHomedir, osFreemem, cpuCoreCount);
