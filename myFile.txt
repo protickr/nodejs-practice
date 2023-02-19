@@ -1,0 +1,2 @@
+let replace previous content
+New line of text appended
