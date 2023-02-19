@@ -58,11 +58,23 @@ const EventEmitter = require("events"); // returns EventEmitter class
 const emitter = new EventEmitter();
 
 // register an event listener for "bellRing" event
-emitter.on("bellRing", function(){
-    console.log("Event er barota baijja geche !");
-});
+// emitter.on("bellRing", function(){
+//     console.log("Event er barota baijja geche !");
+// });
 
 // emitting event
-emitter.emit("bellRing");
+// emitter.emit("bellRing");
 // listener must be registered prior to emitting event
 
+// event listener callback with parameters
+emitter.on("bellRing", ({time, task})=>{
+    console.log(`ghonta bajche! ${time}, ${task} lagbe`);
+});
+
+emitter.emit("bellRing", {
+    time: "12 O'clock", 
+    task: "Ghurte jaowa"
+});
+
+// event listener and event emitter should be added to the same EvenEmitter object 
+// otherwise it will not work
