@@ -63,12 +63,20 @@
 
 
 //// write stream: 
+// const fs = require("fs");
+// const bigDataReadStream = fs.createReadStream(`${__dirname}/bigData.txt`, 'utf-8');
+// const bigDataWriteStream = fs.createWriteStream(`${__dirname}/output.txt`, "utf8");
+
+// bigDataReadStream.on("data", (chunk)=>{
+//     bigDataWriteStream.write(chunk);
+// });
+
+// console.log("hello");
+
+
+// pipe
+// req is a readstream and res is a writestream
 const fs = require("fs");
-const bigDataReadStream = fs.createReadStream(`${__dirname}/bigData.txt`, 'utf-8');
-const bigDataWriteStream = fs.createWriteStream(`${__dirname}/output.txt`, "utf8");
-
-bigDataReadStream.on("data", (chunk)=>{
-    bigDataWriteStream.write(chunk);
-});
-
-console.log("hello");
+const readStream = fs.createReadStream(`${__dirname}/bigData.txt`, "utf-8");
+const writeStream = fs.createWriteStream(`${__dirname}/output.txt`);
+readStream.pipe(writeStream);
