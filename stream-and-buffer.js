@@ -76,7 +76,20 @@
 
 // pipe
 // req is a readstream and res is a writestream
-const fs = require("fs");
-const readStream = fs.createReadStream(`${__dirname}/bigData.txt`, "utf-8");
-const writeStream = fs.createWriteStream(`${__dirname}/output.txt`);
-readStream.pipe(writeStream);
+// const fs = require("fs");
+// const readStream = fs.createReadStream(`${__dirname}/bigData.txt`, "utf-8");
+// const writeStream = fs.createWriteStream(`${__dirname}/output.txt`);
+// readStream.pipe(writeStream);
+
+
+// http server with read and write to file
+const http = require('http');
+const fs = require('fs');
+
+const server = http.createServer((req, res)=>{
+    const readStream = fs.createReadStream(`${__dirname}/bigData.txt`);
+    readStream.pipe(res);
+});
+
+server.listen(3000);
+console.log("listening on port 3000");
