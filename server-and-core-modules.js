@@ -67,14 +67,41 @@ const emitter = new EventEmitter();
 // listener must be registered prior to emitting event
 
 // event listener callback with parameters
-emitter.on("bellRing", ({time, task})=>{
-    console.log(`ghonta bajche! ${time}, ${task} lagbe`);
-});
+// emitter.on("bellRing", ({time, task})=>{
+//     console.log(`ghonta bajche! ${time}, ${task} lagbe`);
+// });
 
-emitter.emit("bellRing", {
-    time: "12 O'clock", 
-    task: "Ghurte jaowa"
-});
+// emitter.emit("bellRing", {
+//     time: "12 O'clock", 
+//     task: "Ghurte jaowa"
+// });
 
 // event listener and event emitter should be added to the same EvenEmitter object 
 // otherwise it will not work
+
+
+// http module
+const http = require("http");
+// const server = http.createServer();
+
+const server = http.createServer((req, res)=>{
+    if(req.url === "/"){
+        res.write("a single response from application root");
+        
+    } else if (req.url === "/about"){
+        res.write("you reached about us page");
+    
+    } else {
+        res.write("not found");
+    }
+
+    res.end();
+});
+
+server.listen(3000);
+console.log("listening on port 3000");
+// http server.listen keeps event loop occupied like an infinite while loop
+
+// server.on("connection", (socket)=>{
+//     console.log("new connection");
+// });
