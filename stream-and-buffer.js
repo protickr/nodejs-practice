@@ -19,7 +19,7 @@
 
 
 
-//// http server request body is streamed by default
+// // http server request body is streamed by default
 // const http = require("http");
 // const server = http.createServer((req, res)=>{
 //     const requestBody = [];
@@ -62,7 +62,7 @@
 
 
 
-//// write stream: 
+// // write stream: 
 // const fs = require("fs");
 // const bigDataReadStream = fs.createReadStream(`${__dirname}/bigData.txt`, 'utf-8');
 // const bigDataWriteStream = fs.createWriteStream(`${__dirname}/output.txt`, "utf8");
